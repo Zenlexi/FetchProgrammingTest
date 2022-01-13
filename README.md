@@ -1,6 +1,6 @@
 # Fetch Front End Apprentice Programming Test
 
-How to start
+## How to start
 
 To be able to run this project you will need Node.js installed on your computer. You will also have to download and unzip the project.
 
@@ -8,7 +8,7 @@ Once Node is installed, open the Command Prompt and navigate to the directory an
 
 In the web browswer of your choice, type "localhost:8080" in the address bar to access the project.
 
-Features
+## Features
 
 -Responsive and Mobile friendly design
 
