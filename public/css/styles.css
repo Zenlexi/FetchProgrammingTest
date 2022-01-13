@@ -1,0 +1,257 @@
+:root{
+	font-size:16px;
+	--fetch-orange: #ffa900;
+	--fetch-violet: #300d38;
+}
+body{
+	width: 100vw;
+	height: 100vh;
+}
+body *{
+	align-self:center;
+	justify-self:center;
+	font-family: Arial, sans-serif;
+}
+
+#gridContainer{
+	width: 100vw;
+	height: 100vh;
+	display:grid;
+	grid-template-columns:1fr;
+	grid-template-rows: 4rem 1fr 3rem;
+	grid-gap:.5rem;
+}
+
+#instructions{
+	text-align:center;
+	line-height: 1.25rem;
+	margin-bottom:.75rem;
+}
+
+.visuallyhidden{
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+#formContainer, #succContainer, #validContainer, #failContainer{
+	height: auto;
+}
+#myForm{
+	background-color: var(--fetch-orange);
+	border-radius: 25px;
+	display:grid;
+	grid-template-columns:1fr;
+	grid-template-rows: repeat(6, auto);
+	grid-gap: .5rem;
+	padding: .5rem 0;
+}
+input, select{
+	font-size:1.5rem;
+	border: none;
+	border-radius: 10px;
+}
+select{
+	padding-left:1rem;
+	margin-left:1rem;
+	background-color: white;
+	overflow:scroll;
+	margin-top:.25rem;
+}
+label{
+	text-align:left;
+	padding-left:1rem;
+}
+.invalid{
+	outline:3px solid blue;
+}
+
+#subButt{
+	height:3rem;
+	background-color: var(--fetch-violet);
+	color:white;
+	text-align:center;
+	line-height:3rem;
+	border-radius:15px;
+	font-size: 1.25rem;
+	margin: 1rem auto;
+}
+
+#succContainer, #validContainer, #failContainer{
+	background-color:rgba(0,0,0,.75);
+	position:fixed;
+	height:100vh;
+	width:100vw;
+	top:0;
+	left:0;
+	display:none;
+}
+#succMess, #validMess, #failMess{
+	background-color:var(--fetch-orange);
+	height:25vh;
+	margin: calc((75vh - 2rem)/2) auto;
+	border-radius:25px;
+	padding:1rem;
+	text-align:center;
+
+}
+.group{
+	margin: calc((25vh - 4rem)/2) auto;
+	font-size: 1.5rem;
+	color: black;
+	line-height:2rem;
+}
+.closeButt{
+	background-color: var(--fetch-orange);
+	border: 2px solid var(--fetch-violet);
+	height:3rem;
+	width:100px;
+	line-height: 3rem;
+	transition: .5s ease-in-out;
+	margin: auto;
+	border-radius: 15px;
+}
+.closeButt:hover{
+	background-color: var(--fetch-violet);
+	border-color: var(--fetch-orange);
+	color:white;
+	cursor:pointer;
+}
+
+header{
+	background-color:var(--fetch-orange);
+	width:100vw;
+	height:4rem;
+}
+footer{
+	background-color:var(--fetch-orange);
+	width:100vw;
+	height:3rem;
+	line-height:3rem;
+}
+
+@media only screen and (max-width:600px){
+	#formContainer, #succContainer, #validContainer, #failContainer{
+		width: 95vw;
+	}
+	#myForm{
+		height: 95vw;
+		width: 95vw;
+	}
+	input{
+		width: calc(95vw - 2.5rem);
+		padding-left:.5rem;
+	}
+	select{
+		width: calc(95vw - 2rem);
+	}
+
+	#subButt{
+		width:50%;
+	}
+
+	#succMess, #validMess, #failMess{
+		width: calc(95vw - 2rem);
+	}
+
+	footer p:first-child{
+		float:left;
+		margin-left: 1rem;
+	}
+	footer p:last-child{
+		float:right;
+		margin-right: 1rem;
+	}
+
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px){
+	#formContainer{
+		width:75vw;
+	}
+	#myForm{
+		height:75vw;
+		width:75vw;
+	}
+	input{
+		width: calc(75vw - 4.5rem);
+		height: 4rem;
+		padding-left: 1rem;
+	}
+	select{
+		width: calc(75vw - 3.5rem);
+		height: 4rem;
+		margin-left: 1.75rem;
+	}
+	label{
+		padding-left: 1.75rem;
+	}
+
+	#subButt{
+		width:40%;
+	}
+
+	#succMess, #validMess, #failMess{
+		width: calc(75vw - 2rem);
+	}
+
+	footer{
+		display:flex;
+		justify-content:center;
+		column-gap:1rem;
+	}
+	footer p{
+		clear:both;
+	}
+}
+
+@media only screen and (min-width: 900px){
+	#formContainer{
+		width:30vw;
+	}
+	#myForm{
+		height:30vw;
+		width:30vw;
+	}
+	input{
+		width: calc(30vw - 4.5rem);
+		height: auto;
+		padding-left: 1rem;
+	}
+	select{
+		width: calc(30vw - 3.5rem);
+		height: 4rem;
+		margin-left: 1.75rem;
+	}
+	label{
+		padding-left: 1.75rem;
+	}
+
+	#subButt{
+		width:30%;
+		transition: .5s ease-in-out;
+	}
+	#subButt:hover{
+		background-color: var(--fetch-orange);
+		cursor:pointer;
+		color:black;
+	}
+
+	#succMess, #validMess, #failMess{
+		width: calc(30vw - 2rem);
+	}
+
+	footer{
+		display:flex;
+		justify-content:center;
+		column-gap:1rem;
+	}
+	footer p{
+		clear:both;
+	}
+}
